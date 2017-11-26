@@ -1,0 +1,24 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class DataWriter {
+
+	public static void write(String text) {
+		try {
+			File file = new File("encryptedFile.txt");
+			file.createNewFile();
+			FileWriter writer = new FileWriter(file);
+
+			writer.write((text));
+			writer.close();
+			System.out.println("Done!");
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+}

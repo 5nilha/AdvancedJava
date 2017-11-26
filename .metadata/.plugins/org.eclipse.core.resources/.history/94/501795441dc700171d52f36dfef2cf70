@@ -1,0 +1,6 @@
+
+public class (default).ThreadColor {
+
+	public static final String ANSI_BLUE = "\u001B[34m";
+	
+}

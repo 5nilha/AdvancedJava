@@ -1,0 +1,16 @@
+import java.io.File;
+
+public class DataWriter {
+
+	public static void write(String text) {
+		File file = new File("myFile.txt");
+		
+		if(file.createNewFile()) {
+			
+		}
+		else {
+			System.out.println("File Alread exists");
+		}
+	}
+	
+}

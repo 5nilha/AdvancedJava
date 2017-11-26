@@ -1,0 +1,5 @@
+import com.sun.javafx.collections.MappingChange.Map;
+
+public interface MapSetter {
+	public void setMap(Map map);
+}

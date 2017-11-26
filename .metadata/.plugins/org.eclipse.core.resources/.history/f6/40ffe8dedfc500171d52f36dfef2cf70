@@ -1,0 +1,46 @@
+
+class Processor{
+	
+	public void produce() throws InterruptedException{
+		
+		synchronized (this) {
+			System.out.println("We are in the produce method");
+			wait();
+			System.out.println("Returned to produce method");
+		}
+		
+	}
+	
+	public void consume() throws InterruptedException{
+		Thread.sleep(1000);
+		
+		synchronized (this) {
+			System.out.println("Consumer method....");
+			notify();
+			
+		}
+	}
+}
+
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		Processor processor = new Processor();
+		
+		Thread t1 = new Thread(new Runnable(0 ) {
+
+			@Override
+			public void run() {
+				
+				
+				
+			}
+			
+			
+		});
+
+	}
+
+}

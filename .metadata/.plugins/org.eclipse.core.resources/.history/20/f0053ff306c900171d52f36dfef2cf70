@@ -1,0 +1,87 @@
+import java.util.ArrayList;
+
+import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+public class PaycheckListStage extends CreatePaycheckStage {
+
+	public void setPaycheckListStage(Stage stage, ArrayList<Employee> employees) {
+		GridPane pane = new GridPane();
+		pane.setHgap(10);
+		pane.setVgap(10);
+		pane.setAlignment(Pos.TOP_CENTER);
+
+		Label nameLbl = new Label("Employee Name : ");
+		Label salaryLbl = new Label("Salary : ");
+		Label birthLbl = new Label("Birth Date : ");
+		Label addressLbl = new Label("Address : ");
+		Label yearExperienceLbl = new Label("Years of Experience : ");
+		Label netPayLbl = new Label("Net pay : ");
+		Label breakdownTax = new Label("**All Tax Breakdown");
+		Label ssTax = new Label("Social Security : ");
+		Label incomeTax = new Label("Federal Tax: ");
+		Label medicareTax = new Label("Medicare : ");
+		
+
+		int row = 1, col = 0;
+		for (Employee employee : employees) {
+			pane.add(nameLbl, col, row);
+			pane.add(new Label(employee.getName()), col + 1, row);
+			
+			pane.add(salaryLbl, col + 4, row);
+			pane.add(new Label("$" + employee.getSalary().toString()), col + 5, row);
+
+			row += 1; // jump a line
+			
+			pane.add(birthLbl, col, row);
+			pane.add(new Label(employee.getDateOfBirth()), col + 1, row);
+
+			pane.add(yearExperienceLbl, col + 4, row);
+			pane.add(new Label(employee.getYearsOfExperience().toString()), col + 5, row);
+			
+			row += 1; // Jump another line
+
+			pane.add(addressLbl, col, row);
+			pane.add(new Label(employee.getAddress()), col + 1, row);
+
+			row += 1; // Jump another line
+			pane.add(new Label(employee.getAddress2()), col + 1, row);
+			
+			pane.add(netPayLbl, col + 4, row);
+			pane.add(new Label(employee.getNetPay().toString()), col + 5, row);
+
+			row += 1; // Jump another line
+			
+			pane.add(breakdownTax, col, row);
+			row += 1; // Jump another line
+			
+			pane.add(incomeTax, col + 1, row);
+			pane.add(new Label(employee.getIncomeTax().toString()), col + 2, row);
+
+			row += 1; // Jump another line
+			
+			Button button = new Button("Print Paycheck");
+			button.setOnAction(new PrintPaycheck(employee));
+			pane.add(button, col, row);
+
+			row += 2;
+			Separator lineSeparator = new Separator();
+			lineSeparator.setOrientation(Orientation.HORIZONTAL);
+			row += 1;
+			
+			System.out.println("Salary = " + getEmployeeSalary());
+		}
+
+		Scene scene = new Scene(pane, 700, 700);
+		stage.setScene(scene);
+		stage.show();
+
+	}
+
+}

@@ -1,0 +1,20 @@
+
+public class Paycheck {
+
+	private double salary;
+	private double socialSecurity;
+	private double incomeTax;
+	private double medicare;
+	
+	
+	public void paycheckCalculation() {
+		
+		if (salary > 0 && salary < 9325) {
+			incomeTax = salary * 0.10;
+		}
+		
+	}
+	
+	
+	
+}

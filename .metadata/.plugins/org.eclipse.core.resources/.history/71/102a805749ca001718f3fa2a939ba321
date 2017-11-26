@@ -1,0 +1,10 @@
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		
+		String passcode = Bitshifter.encrypt("Fabio");
+		System.out.println(passcode);
+	}
+	
+}

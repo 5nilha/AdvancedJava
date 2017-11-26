@@ -1,0 +1,26 @@
+package Synchronization;
+
+public class App {
+
+public static void main(String[] args) {
+		
+		Animal rabbit = new Animal("Rabbit", 1, 5, 150);
+		Animal turtle = new Animal("Turtle", 2, 3, 100);
+		
+		Thread t1 = new Thread(rabbit);
+		Thread t2 = new Thread(turtle);
+		
+		t1.start();
+		t2.start();
+		
+		try {
+			t1.join();
+			t2.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+}

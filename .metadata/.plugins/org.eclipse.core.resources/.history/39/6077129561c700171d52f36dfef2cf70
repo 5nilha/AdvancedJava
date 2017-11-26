@@ -1,0 +1,16 @@
+import java.io.File;
+import javafx.stage.FileChooser;
+
+public class SingleFileChooser {
+
+	FileChooser fileChooser = new FileChooser();
+	File selectedFile = fileChooser.showOpenDialog(null);
+	
+	if (selectedFile != null) {
+		System.out.println("File selected: " + selectedFile.getName());
+	} else {
+		System.out.println("File selection cancelled");
+	}
+	
+}
+

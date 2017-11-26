@@ -1,0 +1,15 @@
+package Synchronization;
+
+public class Food {
+
+	public synchronized static void eat(int eatTime) {
+		try {
+			Thread.sleep(eatTime);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+}

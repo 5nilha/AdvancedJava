@@ -1,0 +1,7 @@
+import java.util.LinkedHashMap;
+
+public interface DataStorage {
+
+	public LinkedHashMap<Integer, Double> getSalaryCheat();
+	public LinkedHashMap <Integer, Double> salaryCheat = new LinkedHashMap<Integer, Double>();
+}

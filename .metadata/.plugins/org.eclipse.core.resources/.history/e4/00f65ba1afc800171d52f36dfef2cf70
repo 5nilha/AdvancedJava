@@ -1,0 +1,71 @@
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+public class App extends Application {
+
+	private Employee employee = new Employee();
+	
+	TextField nameField;
+	TextField birthField;
+	TextField addressField;
+	TextField experienceField;
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+
+		GridPane pane = new GridPane();
+		pane.setHgap(10);
+		pane.setVgap(10);
+		pane.setAlignment(Pos.CENTER);
+
+		Label nameLabel = new Label("Name");
+		Label birthLabel = new Label("Date of Birth");
+		Label addressLabel = new Label("Address");
+		Label experienceLabel = new Label("Year of Experience");
+
+		nameField = new TextField();
+		birthField = new TextField();
+		addressField = new TextField();
+		experienceField = new TextField();
+
+		// Buttons
+		Button chooseFile = new Button("Choose a File");
+		chooseFile.setOnAction(new PaycheckFile());
+		chooseFile.setAlignment(Pos.CENTER);
+
+		Button printButton = new Button("Print");
+		printButton.setOnAction(new PrintPaycheck());
+		printButton.setAlignment(Pos.CENTER);
+
+		pane.add(nameLabel, 0, 0);
+		pane.add(nameField, 1, 0);
+		pane.add(birthLabel, 0, 1);
+		pane.add(birthField, 1, 1);
+		pane.add(addressLabel, 0, 2);
+		pane.add(addressField, 1, 2);
+		pane.add(experienceLabel, 0, 3);
+		pane.add(experienceField, 1, 3);
+		pane.add(chooseFile, 0, 4);
+		pane.add(printButton, 0, 5);
+
+		Scene scene = new Scene(pane, 500, 500);
+
+		primaryStage.setScene(scene);
+		primaryStage.show();
+
+		new PrintPaycheck().setDialogStage(primaryStage);
+	}
+	
+	
+
+}

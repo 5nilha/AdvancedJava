@@ -1,0 +1,10 @@
+import java.util.LinkedHashMap;
+
+public class TestClass extends PaycheckFile{
+
+	public LinkedHashMap<Integer, Double> salaryCheatTest() {
+		return salaryCheat;
+	}
+	
+	
+}

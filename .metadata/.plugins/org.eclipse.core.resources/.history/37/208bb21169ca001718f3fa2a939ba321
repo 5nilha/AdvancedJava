@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter a phrase to encrypt: ");
+		
+		
+		String passcode = Bitshifter.encrypt("We have been working with the front-end (GUI), and the middle (creating and manipulating collections of objects), and now we will add on the back end.  The persistent storage of data in your applications.");
+		System.out.println(passcode);
+		System.out.println(Bitshifter.decrypt(passcode));
+		
+		
+		
+		DataWriter.write(passcode);
+	}
+	
+}

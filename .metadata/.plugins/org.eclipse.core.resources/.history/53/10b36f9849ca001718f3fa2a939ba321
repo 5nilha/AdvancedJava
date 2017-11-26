@@ -1,0 +1,10 @@
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		
+		String passcode = Bitshifter.encrypt("We have been working with the front-end (GUI), and the middle (creating and manipulating collections of objects), and now we will add on the back end.  The persistent storage of data in your applications.  This exercise is to get you comfortable with connecting to a DB, adding, deleting, retrieving data.   I encourage you to play with this one, do more than the minimum.");
+		System.out.println(passcode);
+	}
+	
+}

@@ -1,0 +1,19 @@
+import java.util.concurrent.Semaphore;
+
+public class App {
+
+	public static void main(String[] args) throws Exception{
+		
+//		Semaphore sem = new Semaphore(0);
+//		
+//		sem.acquire();
+//		sem.release();
+//		
+//		System.out.println("Available permits: " + sem.availablePermits());
+		
+		Connection.getInstance().connect();
+		
+		
+	}
+
+}

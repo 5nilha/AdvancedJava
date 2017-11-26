@@ -1,0 +1,42 @@
+
+public class Paycheck {
+
+	private double salary;
+	private double socialSecurity;
+	private double incomeTax;
+	private double medicare;
+	
+	
+	private void incomeTaxCalculation() {
+		
+		if (salary > 0 && salary <= 9325) {
+			this.incomeTax = salary * 0.10;
+		}
+		else if (salary > 9325 && salary <= 37950) {
+			this.incomeTax = 932.50 + ((salary - 9325) * 0.15);
+		}
+		else if (salary > 37950 && salary <= 91900) {
+			this.incomeTax = 5226.25 + ((salary - 37950) * 0.25);
+		}
+		else if (salary > 91900 && salary <= 191650) {
+			this.incomeTax = 18713.75 + ((salary - 91900) * 0.28);
+		}
+		else if (salary > 191650 && salary <= 416700) {
+			this.incomeTax = 46643.75 + ((salary - 191650) * 0.33);
+		}
+		else if (salary > 416700 && salary <= 418400) {
+			this.incomeTax = 120910.25 + ((salary - 416700) * 0.35);
+		}
+		else if (salary > 418400) {
+			this.incomeTax = 121505.25 + ((salary - 418400) * 0.396);
+		}
+		
+	}
+	
+	public double getIncomeTax() {
+		return this.incomeTax;
+	}
+	
+	
+	
+}

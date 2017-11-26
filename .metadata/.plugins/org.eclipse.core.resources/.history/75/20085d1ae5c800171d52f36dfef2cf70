@@ -1,0 +1,9 @@
+
+public class TestClass extends PaycheckFile{
+
+	public void salaryCheatTest() {
+		System.out.println(salaryCheat);
+	}
+	
+	
+}

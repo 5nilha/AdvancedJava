@@ -1,0 +1,17 @@
+package com.ThreadTest;
+
+public class AnotherThread extends Thread{
+	public void run () {
+		System.out.println("Hello from " + currentThread().getName());
+		
+		try {
+			Thread.sleep(5000);
+		} catch(InterruptedException e) {
+			System.out.println("Another thread woke me out");
+			return;
+		}
+		
+		System.out.println("Five seconds have passed and I'm awake");
+		
+	}
+}

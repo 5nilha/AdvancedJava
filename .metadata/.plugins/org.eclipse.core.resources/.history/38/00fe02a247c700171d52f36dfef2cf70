@@ -1,0 +1,42 @@
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Countdown {
+	public void doCountdown() {
+		switch(Thread.currentThread().getName()) {
+		
+		case "Thread 1":
+			System.out.println("Running Thread 1");
+			break;
+		case "Thread 2":
+			System.out.println("Running Thread 2");
+			break;
+		default: 
+			System.out.println("Running Thread " + Thread.currentThread().getName());
+		
+		}
+		
+		for (int i = 10; i > 0; i--) {
+			System.out.println(Thread.currentThread().getName() + " : i = " + i);
+		}
+	}
+}
+
+class CountdownThread extends Thread {
+	private Countdown threadCountdown;
+	
+	public CountdownThread(Countdown countdown) {
+		threadCountdown = countdown;
+	}
+	
+	public void run () {
+		threadCountdown.doCountdown();
+	}
+}

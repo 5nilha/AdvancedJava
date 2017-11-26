@@ -1,0 +1,38 @@
+import java.util.Random;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+public class App {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.out.println("Starting.");
+		
+		ExecutorService exec = Executors.newCachedThreadPool();
+		
+		Future<?> future = exec.submit(new Callable<Void>>() {
+
+			@Override
+			public Void call() throws Exception {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+		});
+		
+		
+		t.start();
+		
+		Thread.sleep(500);
+		
+		t.interrupt();
+		
+		t.join();
+		
+		System.out.println("Finished.");
+
+	}
+
+}

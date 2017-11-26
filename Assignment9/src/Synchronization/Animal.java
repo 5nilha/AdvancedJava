@@ -1,0 +1,85 @@
+package Synchronization;
+
+import java.util.Random;
+
+public class Animal implements Runnable  {
+
+	private String name; 
+//	private int position;
+//	private int speed;
+//	private int restMax;
+//	private static boolean winner;
+	private int eatTime;
+	
+	
+	public Animal(String name, int eatTime) {
+		this.name = name;
+//		this.position = position;
+//		this.speed = speed;
+//		this.restMax = restMax;
+		this.eatTime = eatTime;
+	}
+	
+	
+	@Override
+	public void run() {
+		
+		Random random = new Random();
+		
+		for (int i = 0; i <= 100; i++) {
+			try {
+				Food.eat(random.nextInt(eatTime));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		System.out.println(this.name + " Crossed the ending line.");
+		
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+//	public int getPosition() {
+//		return position;
+//	}
+//
+//
+//	public void setPosition(int position) {
+//		this.position = position;
+//	}
+//
+//
+//	public int getSpeed() {
+//		return speed;
+//	}
+//
+//
+//	public void setSpeed(int speed) {
+//		this.speed = speed;
+//	}
+//
+//
+//	public int getRestMax() {
+//		return restMax;
+//	}
+//
+//
+//	public void setRestMax(int restMax) {
+//		this.restMax = restMax;
+//	}
+//	
+//	public static void winner() {
+//		winner = true;
+//	}
+
+}
+

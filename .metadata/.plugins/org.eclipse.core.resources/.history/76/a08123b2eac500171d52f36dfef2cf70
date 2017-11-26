@@ -1,0 +1,87 @@
+import java.util.Random;
+
+public class Animal implements Runnable  {
+
+	private String name; 
+	private int position;
+	private int speed;
+	private int restMax;
+	private boolean winner;
+	
+	
+	public Animal(String name, int  position, int speed, int restMax) {
+		this.name = name;
+		this.position = position;
+		this.speed = speed;
+		this.restMax = restMax;
+	}
+	
+	
+	@Override
+	public void run() {
+		
+		Random random = new Random();
+		
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				i += speed;
+				Thread.sleep(random.nextInt(restMax));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+//			if (i >= 0 && i < 1 ) {
+//				System.out.println(this.name + " Crossed " + i + " yard");
+//			} else {
+//				System.out.println(this.name + " Crossed " + i + " yards");
+//			}
+		}
+		
+		System.out.println(this.name + " Crossed the ending line.");
+		
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public int getPosition() {
+		return position;
+	}
+
+
+	public void setPosition(int position) {
+		this.position = position;
+	}
+
+
+	public int getSpeed() {
+		return speed;
+	}
+
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+
+
+	public int getRestMax() {
+		return restMax;
+	}
+
+
+	public void setRestMax(int restMax) {
+		this.restMax = restMax;
+	}
+	
+	public static boolean winner() {
+		return true;
+	}
+
+}

@@ -1,0 +1,19 @@
+import java.util.Map;
+
+public class DataStorage implements MapSetter, MapGiver {
+
+	private Map map;
+	
+	@Override
+	public void giveMAp(MapSetter acceptMap) {
+		acceptMap.setMap(map);
+		
+	}
+
+	@Override
+	public void setMap(Map map) {
+		this.map = map;
+		
+	}
+
+}
